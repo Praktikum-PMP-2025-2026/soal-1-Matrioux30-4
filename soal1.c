@@ -104,8 +104,8 @@ int main(){
     struct operasi oppo;
 
     for (int i=0; i<N; i++){
-        scanf("%d", &oppo.operator[i]);
-        scanf("%d", &oppo.nilai[i]); 
+        scanf("%d", &(oppo.operator[i]));
+        scanf("%d", &(oppo.nilai[i])); 
     }
 
     for (int i=0; i<N; i++){
