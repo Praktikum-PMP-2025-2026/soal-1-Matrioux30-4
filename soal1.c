@@ -82,13 +82,18 @@ int indexof(struct myDeque* dq, int value){
 
 void Delete(struct myDeque *dq, int value){
     struct Node *current = dq->front;
+
+    if (current->next == NULL){
+        return;
+    }
+
     int index = indexof(dq, value);
 
     for (int i=0; i<index-1; i++){
         current = current->next;
     }
 
-    struct Node *temp = current->next;
+    struct Node *temp = current->next;  
     current->next = temp->next;
     dq->size--;
 }
