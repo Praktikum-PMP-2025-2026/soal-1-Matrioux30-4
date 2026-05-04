@@ -1,10 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct operasi{
-    int operator[30];
-    int nilai[30];
-};
 
 struct Node {
     int data;
@@ -100,27 +96,28 @@ void Delete(struct myDeque *dq, int value){
 int main(){
     struct myDeque* dq = createMyDeque();
     int N;
+    int operator[30];
+    int nilai[30];
     scanf("%d", &N);
-    struct operasi oppo;
 
     for (int i=0; i<N; i++){
-        scanf("%d", &(oppo.operator[i]));
-        scanf("%d", &(oppo.nilai[i])); 
+        scanf("%d", &operator[i]);
+        scanf("%d", &nilai[i]); 
     }
 
     for (int i=0; i<N; i++){
-        switch(oppo.operator[i]){
+        switch(operator[i]){
             case 1:
-                insertFront(dq, oppo.nilai[i]);
+                insertFront(dq, nilai[i]);
                 continue;
             case 2:
-                insertRear(dq, oppo.nilai[i]);
+                insertRear(dq, nilai[i]);
                 continue;
             case 3:
-                Delete(dq, oppo.nilai[i]);
+                Delete(dq, nilai[i]);
                 continue;
             case 4:
-                int idx = indexof(dq, oppo.nilai[i]);
+                int idx = indexof(dq, nilai[i]);
                 if(idx == -1){
                     printf("NOT FOUND\n");
                 }else{
