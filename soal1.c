@@ -101,26 +101,26 @@ int main(){
     struct myDeque* dq = createMyDeque();
     int N;
     scanf("%d", &N);
-    struct operasi* oppo;
+    struct operasi oppo;
 
     for (int i=0; i<N; i++){
-        scanf("%d", &oppo->operator[i]);
-        scanf("%d", &oppo->nilai[i]); 
+        scanf("%d", &oppo.operator[i]);
+        scanf("%d", &oppo.nilai[i]); 
     }
 
     for (int i=0; i<N; i++){
-        switch(oppo->operator[i]){
+        switch(oppo.operator[i]){
             case 1:
-                insertFront(dq, oppo->nilai[i]);
+                insertFront(dq, oppo.nilai[i]);
                 continue;
             case 2:
-                insertRear(dq, oppo->nilai[i]);
+                insertRear(dq, oppo.nilai[i]);
                 continue;
             case 3:
-                Delete(dq, oppo->nilai[i]);
+                Delete(dq, oppo.nilai[i]);
                 continue;
             case 4:
-                int idx = indexof(dq, oppo->nilai[i]);
+                int idx = indexof(dq, oppo.nilai[i]);
                 if(idx == -1){
                     printf("NOT FOUND\n");
                 }else{
