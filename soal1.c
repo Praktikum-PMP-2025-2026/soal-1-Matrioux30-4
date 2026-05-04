@@ -59,7 +59,7 @@ void tampilkan(struct myDeque* dq){
 
     struct Node *current = dq->front;
     printf("LIST ");
-    while(dq != NULL){
+    while(current != NULL){
         printf("%d ", current->data);
         current = current->next;
     }
