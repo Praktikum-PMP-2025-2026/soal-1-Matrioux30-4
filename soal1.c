@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 struct Node {
     int data;
     struct Node *prev, *next;
@@ -53,7 +52,7 @@ void insertRear(struct myDeque* dq, int data){
 }
 
 void tampilkan(struct myDeque* dq){
-    if (dq == NULL){
+    if (isEmpty(dq)){
         printf("LIST EMPTY");
         return;
     }
@@ -83,7 +82,8 @@ int indexof(struct myDeque* dq, int value){
 void Delete(struct myDeque *dq, int value){
     struct Node *current = dq->front;
 
-    if (current->next == NULL){
+    if (isEmpty(dq)){
+        printf("Underflow");
         return;
     }
 
