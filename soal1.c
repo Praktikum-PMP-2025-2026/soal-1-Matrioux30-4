@@ -94,6 +94,7 @@ void Delete(struct myDeque *dq, int value){
 
     struct Node *temp = current->next;
     current->next = temp->next;
+    dq->size--;
 }
 
 int main(){
